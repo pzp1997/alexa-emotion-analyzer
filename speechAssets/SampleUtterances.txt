@@ -1,5 +1,7 @@
 AnalyzeToneIntent {text}
-AnalyzeToneIntent Tone of {text}?
-AnalyzeToneIntent What is the tone of {text}?
-AnalyzeToneIntent Emotion of {text}?
-AnalyzeToneIntent What is the emotion of {text}?
+AnalyzeToneIntent tone of {text}
+AnalyzeToneIntent what is the tone of {text}
+AnalyzeToneIntent to analyze the tone of {text}
+AnalyzeToneIntent emotion of {text}
+AnalyzeToneIntent what is the emotion of {text}
+AnalyzeToneIntent to analyze the emotion of {text}

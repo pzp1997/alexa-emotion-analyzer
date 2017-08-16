@@ -15,7 +15,7 @@ logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
 def _get_credentials():
     credentials_path = os.path.abspath(os.path.join(
-        os.path.dirname(__file__), '..', 'watsonCredentials.json'))
+        os.path.dirname(__file__), '..', 'WATSON_CREDENTIALS'))
     with open(credentials_path, 'r') as file_pointer:
         return tuple(file_pointer.read().splitlines())
 
@@ -45,7 +45,7 @@ def handle_analyze_tone(text):
         if emotions:
             best_match = max(emotions, key=lambda x: x['score'])
             emotion_name = best_match.get('tone_name')
-            emotion_score = best_match.get('score') * 100
+            emotion_score = '{:.1f}'.format(best_match.get('score') * 100)
             if emotion_name and emotion_score:
                 speech_text = render_template('emotion', name=emotion_name,
                                               score=emotion_score)
@@ -77,8 +77,6 @@ def session_ended():
 
 
 if __name__ == '__main__':
-    if 'ASK_VERIFY_REQUESTS' in os.environ:
-        verify = str(os.environ.get('ASK_VERIFY_REQUESTS', '')).lower()
-        if verify == 'false':
-            app.config['ASK_VERIFY_REQUESTS'] = False
-    app.run(debug=True)
+    app.config['ASK_APPLICATION_ID'] = (
+        'amzn1.ask.skill.89ae4a38-f08c-422c-8cbe-5109ec9b27b4')
+    app.run(debug=False)
