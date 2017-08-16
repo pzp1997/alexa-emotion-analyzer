@@ -1,0 +1,4 @@
+instructions: "Say a sentence and I will analyze its emotion."
+emotion: "The closest emotion associated with that sentence is {{ name }} with a score of {{ score }} percent."
+error: "I'm currently having trouble accessing the emotion analyzer service."
+stop: "Goodbye."

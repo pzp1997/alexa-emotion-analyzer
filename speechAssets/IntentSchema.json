@@ -1,0 +1,22 @@
+{
+  "intents": [
+    {
+      "intent": "AnalyzeToneIntent",
+      "slots": [
+        {
+          "name": "text",
+          "type": "SENTENCE"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
